@@ -1,0 +1,573 @@
+/* Update and add these navbar styles at the top of your CSS file */
+.navbar {
+    background-color: #ffffff;
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: #1f2937;
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Add these body styles for light mode */
+body {
+    background-color: #d7dfeb;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Update the main container padding to account for fixed navbar */
+.container {
+    padding-top: 5rem; /* Reduce top padding since stats moved */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Remove the existing header styles since we're using navbar */
+header {
+    display: none;
+}
+
+/* Add Item Form Styles */
+.add-item-form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    max-width: 800px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #e5e7eb;
+    color: #1f2937;
+}
+
+.add-item-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+.add-item-form input {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+.add-item-form button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-item-form button:hover {
+    background-color: #2563eb;
+}
+
+/* Card Actions Styles */
+.card-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    color: #1f2937;
+}
+
+.edit-btn {
+    color: #3b82f6;
+}
+
+.delete-btn {
+    color: #ef4444;
+}
+
+.edit-btn:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    transform: scale(1.1);
+}
+
+.delete-btn:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 400px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #1f2937;
+}
+
+.modal-content input {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+.modal-content button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.modal-content button:last-child {
+    background-color: #e5e7eb;
+    color: #1f2937;
+}
+
+.modal-content button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.modal-content button:last-child:hover {
+    background-color: #d1d5db;
+}
+
+/* Search Input Icon Styles */
+.search-wrapper {
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.search-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    color: #6b7280;
+    font-size: 1.3rem;
+}
+
+/* Update the search input styles */
+.search-wrapper input[type="search"] {
+    width: 100%;
+    padding: 0.9rem 3rem 0.9rem 1.5rem;
+    font-size: 1.1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 25px; /* Increased border radius for more rounded look */
+    transition: border-color 0.3s ease;
+    background-color: #ffffff;
+    color: #1f2937;
+    height: 45px;
+}
+
+.search-wrapper input[type="search"]:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+/* Items Grid Styles */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    margin-top: 80px;
+}
+
+/* Update the card styles */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+}
+
+.card-content {
+    margin-bottom: 1rem;
+}
+
+.card .header {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.card .body {
+    font-size: 1.2rem;
+    color: #3b82f6;
+    margin-bottom: 0.5rem;
+}
+
+.card .category {
+    font-size: 1rem;
+    color: #4b5563;
+    background-color: #e5e7eb;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    display: inline-block;
+    border: 1px solid #d1d5db;
+}
+
+/* Search and Add Section Styles */
+.search-and-add {
+    max-width: 800px;
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    align-items: center;
+}
+
+.search-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.search-input-wrapper {
+    position: relative;
+}
+
+/* Also update the add button to match the rounded style */
+.add-item-btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 25px; /* Match the search bar radius */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    height: 45px;
+}
+
+.add-item-btn:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.add-item-btn i {
+    font-size: 1.3rem;
+}
+
+/* Update the expanded card style */
+.card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 1000;
+    width: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-color: #3b82f6;
+}
+
+/* Add styles for the placeholder to prevent layout shift */
+.card-placeholder {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Add overlay for expanded state */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Update the filter styles */
+.filter-wrapper {
+    position: absolute;
+    right: 3.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #6b7280;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: #3b82f6;
+    transform: scale(1.1);
+}
+
+.filter-btn.active {
+    color: #3b82f6;
+}
+
+.filter-tooltip {
+    position: absolute;
+    right: 100%;
+    background-color: #1f2937;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    margin-right: 0.5rem;
+}
+
+.filter-btn:hover + .filter-tooltip {
+    opacity: 1;
+}
+
+/* Update search input styles to accommodate new filter position */
+.search-wrapper input[type="search"] {
+    padding-right: 7rem; /* Increase padding to accommodate both icons */
+}
+
+/* Update search icon position */
+.search-wrapper i.bx-search-alt-2 {
+    right: 1.2rem; /* Move search icon slightly to the right */
+}
+
+/* Update dashboard stats styles */
+.dashboard-stats {
+    display: flex;
+    gap: 2rem;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: #3b82f6;
+    padding: 1rem;
+    background: #eff6ff;
+    border-radius: 12px;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.stat-label {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* Add category color styles */
+.category {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.category[data-category="Fruits"] {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+.category[data-category="Vegetables"] {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.category[data-category="Meat"] {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+/* Add a default style for other categories */
+.category {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+/* Add loading animation styles */
+.loading {
+    position: relative;
+    opacity: 0.7;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid #f3f4f6;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Add styles for category suggestions */
+.category-input-wrapper {
+    position: relative;
+}
+
+.category-suggestions {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.category-suggestion {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-suggestion:hover {
+    background-color: #f3f4f6;
+    color: #3b82f6;
+}
+
+.category-suggestion.selected {
+    background-color: #eff6ff;
+    color: #3b82f6;
+} 
